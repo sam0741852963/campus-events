@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Campus Pulse – NIET events</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2f1fa;--surf:#fff;--ink:#15142b;--mute:#62607e;--line:#dedcf0;--brand:#2b2bdb;--onbrand:#fff;--sun:#ffb81c;--ok:#0f9d6b;
+--Tech:#2b2bdb;--Cultural:#e0356b;--Sports:#0f9d6b;--Career:#c47f00;--Workshop:#7a3ff2;--Club:#0b86b8;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e0d1f;--surf:#1a1932;--ink:#f1f0ff;--mute:#a09ec4;--line:#2e2c52;--brand:#8c8cff;--onbrand:#0e0d1f;--Tech:#8c8cff;--Cultural:#ff7aa5;--Sports:#3fd9a0;--Career:#ffc247;--Workshop:#b794ff;--Club:#5ccbf5;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e0d1f;--surf:#1a1932;--ink:#f1f0ff;--mute:#a09ec4;--line:#2e2c52;--brand:#8c8cff;--onbrand:#0e0d1f;--Tech:#8c8cff;--Cultural:#ff7aa5;--Sports:#3fd9a0;--Career:#ffc247;--Workshop:#b794ff;--Club:#5ccbf5;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.5 'Instrument Sans',system-ui,sans-serif;padding-bottom:84px}
+h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;margin:0;line-height:1.05;letter-spacing:-.02em}
+button,input,select{font:inherit;color:inherit}button{cursor:pointer}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+header.top{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.logo{font:800 22px 'Bricolage Grotesque';display:flex;align-items:center;gap:8px}
+.logo i{width:16px;height:16px;border-radius:50%;background:var(--sun);box-shadow:0 0 0 4px var(--brand)}
+nav.d{display:none;gap:6px}
+nav button,.nb{background:none;border:0;padding:8px 14px;border-radius:99px;font-weight:600;color:var(--mute)}
+nav button[aria-current=page]{background:var(--brand);color:var(--onbrand)}
+.badge{background:var(--sun);color:#15142b;border-radius:99px;font-size:12px;padding:1px 7px;margin-left:4px;font-weight:700}
+.hero{background:var(--brand);color:var(--onbrand);border-radius:28px;padding:34px 26px;position:relative;overflow:hidden;margin-bottom:22px}
+.hero h1{font-size:clamp(34px,7vw,64px);font-weight:800;max-width:11ch}
+.hero p{max-width:44ch;opacity:.9;margin:12px 0 22px}
+.hero .next{display:inline-flex;gap:12px;align-items:center;background:var(--sun);color:#15142b;border:0;border-radius:16px;padding:12px 16px;text-align:left;font-weight:600}
+.hero .next b{font:800 26px 'Bricolage Grotesque'}
+.hero:after{content:"";position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;border:34px solid rgba(255,184,28,.55)}
+.search{display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.search input[type=search]{flex:1;min-width:200px;padding:13px 16px;border-radius:14px;border:2px solid var(--line);background:var(--surf)}
+.search input[type=date]{padding:12px;border-radius:14px;border:2px solid var(--line);background:var(--surf)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 10px;scrollbar-width:none}
+.chip{white-space:nowrap;border:2px solid var(--line);background:var(--surf);border-radius:99px;padding:7px 14px;font-weight:600;font-size:14px}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.count{color:var(--mute);margin:6px 0 14px;font-size:14px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--surf);border-radius:20px;display:flex;overflow:hidden;border:1px solid var(--line);text-align:left;padding:0;width:100%;position:relative}
+.stub{width:84px;flex:none;background:var(--cc);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 4px;border-right:2px dashed var(--surf)}
+:root[data-theme="dark"] .stub,:root:not([data-theme="light"]) .stub{color:#0e0d1f}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .stub{color:#fff}}
+.stub b{font:800 34px/1 'Bricolage Grotesque'}.stub span{font-size:13px;font-weight:600}
+.cb{padding:14px 44px 14px 16px;flex:1;min-width:0}
+.cat{font-size:13px;font-weight:600;color:var(--cc)}
+.card h3{font-size:20px;margin:3px 0 8px}
+.meta{color:var(--mute);font-size:14px}
+.left{display:inline-block;margin-top:8px;font-size:13px;font-weight:600;color:var(--ok)}.left.low{color:#d6402e}
+.heart{position:absolute;right:8px;top:8px;width:36px;height:36px;border-radius:50%;border:0;background:var(--bg);font-size:19px;line-height:1;color:var(--mute)}
+.heart[aria-pressed=true]{color:#e0356b;background:#ffe3ec}
+.empty{text-align:center;padding:50px 10px;color:var(--mute);grid-column:1/-1}
+.empty b{display:block;color:var(--ink);font:700 22px 'Bricolage Grotesque';margin-bottom:6px}
+.btn{background:var(--brand);color:var(--onbrand);border:0;border-radius:14px;padding:13px 20px;font-weight:700;width:100%}
+.btn.alt{background:var(--bg);color:var(--ink);border:2px solid var(--line)}.btn:disabled{opacity:.5;cursor:not-allowed}
+/* sheet */
+.ov{position:fixed;inset:0;background:rgba(10,9,30,.6);display:none;align-items:flex-end;justify-content:center;z-index:30}
+.ov.on{display:flex}
+.sheet{background:var(--surf);width:100%;max-width:640px;max-height:92vh;overflow:auto;border-radius:26px 26px 0 0;padding:0 0 calc(22px + env(safe-area-inset-bottom,0px));animation:up .25s ease-out}
+@keyframes up{from{transform:translateY(40px);opacity:0}}
+.sh{background:var(--cc);color:#fff;padding:22px 22px 20px;position:relative}
+.sh h2{font-size:30px;margin-top:6px}.sh .cat{color:#fff;opacity:.9}
+.x{position:absolute;right:14px;top:14px;border:0;background:rgba(255,255,255,.25);color:#fff;width:36px;height:36px;border-radius:50%;font-size:18px}
+.sb{padding:18px 22px}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.facts div{background:var(--bg);border-radius:14px;padding:10px 12px;font-size:14px}.facts small{display:block;color:var(--mute)}
+.tl{list-style:none;margin:8px 0 18px;padding:0 0 0 14px;border-left:3px solid var(--line)}
+.tl li{position:relative;padding:0 0 12px 14px}.tl li:before{content:"";position:absolute;left:-23px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--cc)}
+.tl b{font-size:14px;display:block}
+.row{display:flex;gap:10px}
+label{display:block;font-weight:600;font-size:14px;margin:12px 0 4px}
+.f{width:100%;padding:12px;border-radius:12px;border:2px solid var(--line);background:var(--bg)}
+.f[aria-invalid=true]{border-color:#d6402e}.err{color:#d6402e;font-size:13px;min-height:16px}
+.ok{text-align:center;padding:6px 0}
+.tick{width:64px;height:64px;border-radius:50%;background:var(--ok);margin:0 auto 10px;display:grid;place-items:center;animation:pop .4s cubic-bezier(.2,1.6,.4,1)}
+@keyframes pop{from{transform:scale(0)}}
+.tick svg{width:34px;stroke:#fff;fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+.pass{display:flex;background:var(--bg);border-radius:18px;text-align:left;margin:14px 0;overflow:hidden;border:1px solid var(--line)}
+.pass .l{padding:14px;flex:1}.pass .r{padding:12px;border-left:2px dashed var(--line);display:grid;place-items:center}
+.pass svg{width:76px;height:76px;fill:var(--ink)}.code{font:800 22px 'Bricolage Grotesque';letter-spacing:.06em;color:var(--brand)}
+.toast{position:fixed;left:50%;bottom:100px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:99px;font-weight:600;z-index:50;opacity:0;pointer-events:none;transition:opacity .2s}
+.toast.on{opacity:1}
+nav.m{position:fixed;left:0;right:0;bottom:0;background:var(--surf);border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:6px 8px calc(6px + env(safe-area-inset-bottom,0px));z-index:20}
+nav.m button{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:12px;border-radius:14px;padding:6px 18px;background:none;border:0;color:var(--mute);font-weight:600}
+nav.m button[aria-current=page]{color:var(--brand)}nav.m svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.theme{background:var(--surf);border:2px solid var(--line);border-radius:50%;width:38px;height:38px}
+@media(min-width:760px){nav.d{display:flex}nav.m{display:none}body{padding-bottom:30px}.ov{align-items:center}.sheet{border-radius:26px}.toast{bottom:30px}}
+.vibe{display:flex;gap:8px;align-items:center;overflow-x:auto;margin-bottom:12px;scrollbar-width:none}.vibe span{font:700 16px 'Bricolage Grotesque';white-space:nowrap;margin-right:2px}.vb[aria-pressed=true]{background:var(--sun);color:#15142b;border-color:var(--sun)}.sur{border-style:dashed}
+.bar{height:5px;background:var(--line);border-radius:9px;margin-top:8px;overflow:hidden}.bar i{display:block;height:100%;background:var(--cc);border-radius:9px}.hotb{margin-left:8px;font-size:12px;background:var(--sun);color:#15142b;border-radius:99px;padding:1px 8px}
+.conf{position:fixed;inset:0;pointer-events:none;z-index:60}.conf i{position:absolute;left:50%;top:55%;width:9px;height:14px;border-radius:2px;animation:cf 1.5s cubic-bezier(.2,.7,.3,1) forwards}@keyframes cf{40%{transform:translate(calc(var(--x)*.7),var(--y)) rotate(calc(var(--r)*.5))}100%{transform:translate(var(--x),380px) rotate(var(--r));opacity:0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+<div class="wrap">
+<header class="top"><div class="logo"><i></i>Campus Pulse</div>
+<nav class="d" aria-label="Main"></nav>
+<button class="theme" id="th" aria-label="Toggle dark mode">◐</button></header>
+<main id="app"></main></div>
+<nav class="m" aria-label="Main"></nav>
+<div class="ov" id="ov" role="dialog" aria-modal="true" aria-label="Event details"><div class="sheet" id="sheet"></div></div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const CAT={Tech:'Tech',Cultural:'Cultural',Sports:'Sports',Career:'Career',Workshop:'Workshop',Club:'Club'};
+const DAY=864e5,T0=new Date();T0.setHours(0,0,0,0);
+const E=[
+['e1','Hack the Cloud 24','Tech',1,10,'Innovation Hub',120,96,'CS Cloud Club','A 24-hour build sprint on AWS and GCP free tiers. Form teams of 3–4, ship a working cloud app, demo to industry mentors.',[['10:00','Kickoff and problem statements'],['13:00','Mentor office hours'],['Next day 10:00','Final demos and results']]],
+['e2','Sunset Open Mic','Cultural',0,17,'Library Lawn',80,52,'Cultural Society','Poetry, stand-up, original songs. Sign up to perform or just show up and listen with chai in hand.',[['17:00','Doors and sign-ups'],['17:30','Performances'],['19:15','Jam session']]],
+['e3','Inter-Branch Futsal','Sports',2,16,'Main Ground',64,40,'Sports Council','5-a-side knockout. Register as a team of 7 (5 plus 2 subs). Trophies and bragging rights for the winners.',[['16:00','Group stage'],['18:00','Semi-finals'],['19:00','Final']]],
+['e4','Resume Clinic with Alumni','Career',3,11,'Seminar Hall 2',50,47,'Training & Placement Cell','Alumni from product companies review your resume one-on-one. Bring a printed copy or open it on your laptop.',[['11:00','What recruiters scan first'],['11:45','1:1 reviews'],['13:00','Q&A']]],
+['e5','Build Your First Portfolio Site','Workshop',4,14,'CS Block Lab 3',40,22,'Web Dev Club','Hands-on HTML, CSS and deployment. Leave with a live portfolio link you can put on your resume.',[['14:00','Layout and design basics'],['15:15','Responsive CSS'],['16:30','Deploy and share']]],
+['e6','Photography Walk: Golden Hour','Club',5,16,'Campus Gate 2',30,18,'Lens Club','Walk the campus, learn framing and light with phone or camera. Best shots get printed for the Gallery wall.',[['16:00','Meet at Gate 2'],['16:15','Guided walk'],['17:45','Photo review']]],
+['e7','AI Study Tools Demo Day','Tech',6,15,'Auditorium',200,121,'AI & ML Society','Student teams demo AI projects, from planners to note summarisers. Audience votes for the best build.',[['15:00','Opening talk'],['15:30','Team demos'],['17:00','Audience vote']]],
+['e8','Garba Night','Cultural',8,18,'Main Ground',300,214,'Cultural Society','Dhol, dandiya and dinner stalls. Come in traditional wear if you like. Open to all years.',[['18:00','Warm-up lessons'],['19:00','Main garba'],['21:30','Wrap']]],
+['e9','Internship Fair: Noida Startups','Career',10,10,'Auditorium Lobby',150,60,'Training & Placement Cell','Meet 25 local startups hiring interns for web, cloud and design. Carry 5 copies of your resume.',[['10:00','Stalls open'],['12:00','Pitch round'],['15:00','On-spot interviews']]],
+['e10','Docker and Kubernetes in 3 Hours','Workshop',12,10,'CS Block Lab 1',45,30,'Cloud Computing Club','Containers from zero. Build, ship and scale a small app on a local cluster. Laptop required.',[['10:00','Docker basics'],['11:30','Compose'],['12:30','Kubernetes intro']]],
+['e11','Chess Blitz Cup','Sports',14,13,'Student Activity Room',48,25,'Chess Club','Swiss-system blitz, 5 rounds, 3+2 time control. Boards and clocks provided.',[['13:00','Round 1'],['15:30','Round 5'],['16:15','Prizes']]],
+['e12','Startup Pitch Night','Club',18,17,'Seminar Hall 1',90,41,'E-Cell','Three-minute pitches in front of founders. Pitch your idea or sit in and vote for the winner.',[['17:00','Pitches'],['18:30','Feedback panel'],['19:00','Networking']]],
+['e13','Fest Night: Battle of Bands','Cultural',24,18,'Auditorium',350,190,'Music Club','Six campus bands, one stage. Loud, late and free for registered students.',[['18:00','Doors'],['18:45','Round 1'],['21:00','Finale']]]
+].map(a=>({id:a[0],t:a[1],c:a[2],d:a[3],h:a[4],v:a[5],cap:a[6],tk:a[7],o:a[8],desc:a[9],s:a[10]}));
+E.forEach(e=>{e.date=new Date(T0.getTime()+e.d*DAY);e.date.setHours(e.h)});
+const ls={get(k,f){try{return JSON.parse(localStorage.getItem(k))??f}catch(e){return f}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+let saved=ls.get('cp_saved',[]),regs=ls.get('cp_regs',{}),me=ls.get('cp_me',{});
+let st={q:'',cat:'All',when:'Any',date:'',view:'discover',vibe:''};
+const VIBES={'🛠 Build something':['Tech','Workshop'],'🎧 Chill and listen':['Cultural','Club'],'⚡ Get moving':['Sports'],'💼 Get hired':['Career']};
+const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmtT=d=>d.toLocaleTimeString('en-IN',{hour:'numeric',minute:'2-digit'}),fmtD=d=>d.toLocaleDateString('en-IN',{weekday:'short',day:'numeric',month:'short'});
+const left=e=>e.cap-e.tk-(regs[e.id]?1:0);
+const ic={discover:'<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>',saved:'<svg viewBox="0 0 24 24"><path d="M12 21s-8-5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6-8 11-8 11z"/></svg>',tickets:'<svg viewBox="0 0 24 24"><path d="M3 8a2 2 0 0 0 0 8v2h18v-2a2 2 0 0 1 0-8V6H3z"/><path d="M14 6v12" stroke-dasharray="2 3"/></svg>'};
+const tabs=[['discover','Discover'],['saved','Saved'],['tickets','My tickets']];
+function nav(){const cnt=v=>v=='saved'?saved.length:v=='tickets'?Object.keys(regs).length:0;
+$('nav.d').innerHTML=tabs.map(([v,l])=>`<button data-v="${v}" ${st.view==v?'aria-current="page"':''}>${l}${cnt(v)?`<span class="badge">${cnt(v)}</span>`:''}</button>`).join('');
+$('nav.m').innerHTML=tabs.map(([v,l])=>`<button data-v="${v}" ${st.view==v?'aria-current="page"':''}>${ic[v]}${l}${cnt(v)?` (${cnt(v)})`:''}</button>`).join('')}
+function match(e){if(st.cat!='All'&&e.c!=st.cat)return false;if(st.vibe&&!VIBES[st.vibe].includes(e.c))return false;const q=st.q.toLowerCase();if(q&&!(e.t+e.v+e.o+e.c+e.desc).toLowerCase().includes(q))return false;
+if(st.date){return e.date.toDateString()==new Date(st.date+'T00:00').toDateString()}
+if(st.when=='Today')return e.d==0;if(st.when=='This week')return e.d<=6;if(st.when=='This month')return e.d<=30;return true}
+function card(e){const l=left(e),on=saved.includes(e.id);
+return `<article class="card" style="--cc:var(--${e.c})"><button class="card" style="border:0;border-radius:0;background:none;position:static;flex:1" data-open="${e.id}" aria-label="Open ${esc(e.t)}"><div class="stub"><span>${e.date.toLocaleDateString('en-IN',{month:'short'})}</span><b>${e.date.getDate()}</b><span>${e.date.toLocaleDateString('en-IN',{weekday:'short'})}</span></div>
+<div class="cb"><div class="cat">${e.c}</div><h3>${esc(e.t)}</h3><div class="meta">${fmtT(e.date)} · ${esc(e.v)}</div>
+<span class="left ${l<=10?'low':''}">${regs[e.id]?'You are registered':l<=0?'Full':l+' spots left'}</span>${l>0&&(e.cap-l)/e.cap>.8?'<b class="hotb">Filling fast</b>':''}<div class="bar"><i style="width:${Math.min(100,(e.cap-l)/e.cap*100)}%"></i></div></div></button>
+<button class="heart" data-save="${e.id}" aria-pressed="${on}" aria-label="${on?'Remove from saved':'Save event'}">${on?'♥':'♡'}</button></article>`}
+function discover(){const nx=E.filter(e=>e.date>=new Date()).sort((a,b)=>a.date-b.date)[0];
+const list=E.filter(match).sort((a,b)=>a.date-b.date);
+return `<section class="hero"><h1>${me.name?'Hey '+esc(me.name.split(' ')[0])+', what’s on?':'What’s on at NIET?'}</h1><p>Find events by interest, save the ones you like, reserve your seat in under a minute.</p>
+<button class="next" data-open="${nx.id}"><b id="cd" data-t="${nx.date.getTime()}">${cdText(nx.date.getTime())}</b><span>${esc(nx.t)}<br><small>${fmtT(nx.date)} · ${esc(nx.v)}</small></span></button></section>
+<div class="vibe"><span>Pick your vibe</span>${Object.keys(VIBES).map(v=>`<button class="chip vb" data-vibe="${v}" aria-pressed="${st.vibe==v}">${v}</button>`).join('')}<button class="chip sur" data-surprise>🎲 Surprise me</button></div>
+<div class="search"><input type="search" id="q" placeholder="Search events, venues, clubs" aria-label="Search events" value="${esc(st.q)}"><input type="date" id="dt" aria-label="Pick a date" value="${st.date}"></div>
+<div class="chips" role="group" aria-label="Category">${['All',...Object.keys(CAT)].map(c=>`<button class="chip" data-cat="${c}" aria-pressed="${st.cat==c}">${c}</button>`).join('')}</div>
+<div class="chips" role="group" aria-label="Date">${['Any','Today','This week','This month'].map(w=>`<button class="chip" data-when="${w}" aria-pressed="${!st.date&&st.when==w}">${w=='Any'?'Any date':w}</button>`).join('')}</div>
+<div class="count" id="cnt">${list.length} event${list.length==1?'':'s'}</div>
+<div class="grid" id="grid">${list.length?list.map(card).join(''):'<div class="empty"><b>No events match</b>Try a different category or clear the date filter.<br><br><button class="chip" data-clear>Clear filters</button></div>'}</div>`}
+function listView(ids,title,empt){const list=E.filter(e=>ids.includes(e.id)).sort((a,b)=>a.date-b.date);
+return `<h2 style="font-size:36px;margin:10px 0 18px">${title}</h2><div class="grid">${list.length?list.map(card).join(''):`<div class="empty"><b>${empt[0]}</b>${empt[1]}<br><br><button class="chip" data-v="discover">Browse events</button></div>`}</div>`}
+function render(){nav();const a=$('#app');
+a.innerHTML=st.view=='saved'?listView(saved,'Saved events',['Nothing saved yet','Tap the heart on any event to keep it here.']):st.view=='tickets'?listView(Object.keys(regs),'My tickets',['No tickets yet','Reserve a seat and your pass will show up here.']):discover()}
+function refreshGrid(){const list=E.filter(match).sort((a,b)=>a.date-b.date);$('#cnt').textContent=list.length+' event'+(list.length==1?'':'s');
+$('#grid').innerHTML=list.length?list.map(card).join(''):'<div class="empty"><b>No events match</b>Try a different category or clear the date filter.<br><br><button class="chip" data-clear>Clear filters</button></div>'}
+function qr(code){let h=0,s='';for(const c of code)h=(h*31+c.charCodeAt(0))>>>0;
+for(let y=0;y<9;y++)for(let x=0;x<9;x++){const f=(x<3&&y<3)||(x>5&&y<3)||(x<3&&y>5);h=(h*1103515245+12345)>>>0;if(f||(h>>16)&1)s+=`<rect x="${x*10}" y="${y*10}" width="10" height="10"/>`}
+return `<svg viewBox="0 0 90 90" aria-label="Ticket code">${s}</svg>`}
+function code(e,n){let h=0;for(const c of e.id+n)h=(h*37+c.charCodeAt(0))>>>0;return 'CP-'+h.toString(36).toUpperCase().slice(0,5).padEnd(5,'X')}
+function pass(e){const r=regs[e.id];return `<div class="pass"><div class="l"><div class="cat" style="color:var(--brand)">Your pass</div><b>${esc(e.t)}</b><div class="meta">${fmtD(e.date)}, ${fmtT(e.date)}<br>${esc(e.v)}<br>${esc(r.name)}</div><div class="code">${r.code}</div></div><div class="r">${qr(r.code)}</div></div>`}
+function open(id){const e=E.find(x=>x.id==id);if(!e)return;const l=left(e),on=saved.includes(id);
+$('#sheet').innerHTML=`<div class="sh" style="--cc:var(--${e.c})"><button class="x" data-close aria-label="Close">✕</button><div class="cat">${e.c} · by ${esc(e.o)}</div><h2>${esc(e.t)}</h2></div>
+<div class="sb" style="--cc:var(--${e.c})"><div class="facts"><div><small>When</small>${fmtD(e.date)}<br>${fmtT(e.date)}</div><div><small>Where</small>${esc(e.v)}<br>NIET Campus</div><div><small>Seats</small>${regs[e.id]?'You are in':l<=0?'Full':l+' of '+e.cap+' left'}</div><div><small>Cost</small>Free for students</div></div>
+<p>${esc(e.desc)}</p><h3 style="font-size:19px">Schedule</h3><ul class="tl">${e.s.map(s=>`<li><b>${esc(s[0])}</b>${esc(s[1])}</li>`).join('')}</ul>
+<div id="act">${regs[id]?pass(e)+'<button class="btn alt" data-cancel="'+id+'">Cancel registration</button>':`<div class="row"><button class="btn" data-reg="${id}" ${l<=0?'disabled':''}>${l<=0?'Event full':'Reserve my spot'}</button><button class="btn alt" style="width:auto" data-save="${id}" aria-pressed="${on}">${on?'♥ Saved':'♡ Save'}</button></div>`}</div></div>`;
+$('#ov').classList.add('on');document.body.style.overflow='hidden';$('#sheet').scrollTop=0}
+function close(){$('#ov').classList.remove('on');document.body.style.overflow='';if(location.hash)history.replaceState(null,'',location.pathname)}
+function form(id){$('#act').innerHTML=`<form id="rf" novalidate><label for="nm">Full name</label><input class="f" id="nm" autocomplete="name" value="${esc(me.name||'')}"><div class="err" id="e1"></div>
+<label for="em">College email</label><input class="f" id="em" type="email" autocomplete="email" value="${esc(me.email||'')}"><div class="err" id="e2"></div>
+<label for="rl">Roll number</label><input class="f" id="rl" inputmode="numeric" value="${esc(me.roll||'')}"><div class="err" id="e3"></div>
+<button class="btn" type="submit" style="margin-top:10px">Confirm registration</button></form>`;
+$('#nm').focus();$('#rf').onsubmit=ev=>{ev.preventDefault();const n=$('#nm'),m=$('#em'),r=$('#rl');
+const chk=[[n,'e1',n.value.trim().length>=2,'Enter your full name.'],[m,'e2',/^\S+@\S+\.\S+$/.test(m.value),'Enter a valid email, like name@niet.co.in.'],[r,'e3',/^\d{5,}$/.test(r.value.trim()),'Roll number should be at least 5 digits.']];
+let ok=true;chk.forEach(([i,e,v,msg])=>{i.setAttribute('aria-invalid',!v);$('#'+e).textContent=v?'':msg;if(!v)ok=false});if(!ok)return;
+me={name:n.value.trim(),email:m.value.trim(),roll:r.value.trim()};ls.set('cp_me',me);
+const ev2=E.find(x=>x.id==id);regs[id]={...me,code:code(ev2,me.roll)};ls.set('cp_regs',regs);
+$('#act').innerHTML=`<div class="ok"><div class="tick"><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></div><h3 style="font-size:26px">You're in!</h3><p class="meta">A confirmation is saved under My tickets. Show this pass at the entrance.</p></div>${pass(ev2)}<button class="btn alt" data-close>Done</button>`;
+burst();nav();if(st.view=='tickets')render()}}
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('on'),1800)}
+document.addEventListener('click',ev=>{const t=ev.target.closest('[data-open],[data-save],[data-vibe],[data-surprise],[data-cat],[data-when],[data-v],[data-close],[data-reg],[data-cancel],[data-clear]');
+if(!t){if(ev.target.id=='ov')close();return}const d=t.dataset;
+if(d.open){history.replaceState(null,'','#'+d.open);open(d.open)}
+else if(d.save!==undefined){const i=saved.indexOf(d.save);i<0?(saved.push(d.save),toast('Saved to your list')):(saved.splice(i,1),toast('Removed from saved'));ls.set('cp_saved',saved);
+if($('#ov').classList.contains('on'))open(d.save);if(st.view=='discover'&&!$('#ov').classList.contains('on'))refreshGrid();else if(!$('#ov').classList.contains('on'))render();nav()}
+else if(d.vibe){st.vibe=st.vibe==d.vibe?'':d.vibe;render()}
+else if(d.surprise!==undefined){const a=E.filter(e=>left(e)>0&&e.date>=new Date()),p=a[Math.random()*a.length|0];history.replaceState(null,'','#'+p.id);open(p.id)}
+else if(d.cat){st.cat=d.cat;render()}else if(d.when){st.when=d.when;st.date='';render()}
+else if(d.v){st.view=d.v;close();render();scrollTo(0,0)}
+else if(d.close!==undefined){close()}
+else if(d.reg)form(d.reg);
+else if(d.cancel){delete regs[d.cancel];ls.set('cp_regs',regs);toast('Registration cancelled');open(d.cancel);nav();if(st.view=='tickets')render()}
+else if(d.clear!==undefined){st={...st,q:'',cat:'All',when:'Any',date:'',vibe:''};render()}});
+document.addEventListener('input',ev=>{if(ev.target.id=='q'){st.q=ev.target.value;refreshGrid()}if(ev.target.id=='dt'){st.date=ev.target.value;document.querySelectorAll('[data-when]').forEach(b=>b.setAttribute('aria-pressed','false'));refreshGrid()}});
+document.addEventListener('keydown',ev=>{if(ev.key=='Escape')close()});
+$('#th').onclick=()=>{const r=document.documentElement,dk=getComputedStyle(r).colorScheme.includes('dark')||r.dataset.theme=='dark';r.dataset.theme=dk?'light':'dark'};
+addEventListener('hashchange',()=>{const h=location.hash.slice(1);if(E.some(e=>e.id==h))open(h)});
+function cdText(t){let m=Math.max(0,Math.round((t-Date.now())/6e4));const d=Math.floor(m/1440),h=Math.floor(m%1440/60);m%=60;return 'starts in '+(d?d+'d '+h+'h':h?h+'h '+m+'m':m+'m')}
+function burst(){if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;const c=document.createElement('div');c.className='conf';c.setAttribute('aria-hidden','true');const cols=['#ffb81c','#e0356b','#2b2bdb','#0f9d6b','#7a3ff2'];for(let i=0;i<46;i++){const p=document.createElement('i');p.style.cssText=`--x:${(Math.random()-.5)*620}px;--y:${-180-Math.random()*280}px;--r:${Math.random()*720}deg;background:${cols[i%5]}`;c.appendChild(p)}document.body.appendChild(c);setTimeout(()=>c.remove(),1700)}
+setInterval(()=>{const el=$('#cd');if(el)el.textContent=cdText(+el.dataset.t)},30000);
+render();if(E.some(e=>e.id==location.hash.slice(1)))open(location.hash.slice(1));
+</script></body></html>
